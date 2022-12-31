@@ -25,7 +25,7 @@ export const VisionCard=styled.div`
     justify-content:center;
     align-items:flex-start;
     border-radius:16px;
-    max-height:270px;
+    min-height:250px;
     padding:52px;
     box-shadow:0 8px 16px rgba(0,0,0,0.2);
     transition: all 0.2 ease-in-out;
