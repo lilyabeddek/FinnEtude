@@ -4,11 +4,11 @@ import {Link as LinkScroll} from 'react-scroll'
 
 export const Nav = styled.nav`
     background: ${({scrollNav})=>(scrollNav? '#000':'transparent')};
-    height:80px;
-    margin-top:-80px;
+    height:70px;
+    margin-top:-70px;
     display:flex;
     justify-content:center;
-    aligh-items:center;
+    align-items:center;
     font-size:1rem;
     position:sticky;
     top:0;
@@ -23,35 +23,33 @@ export const Nav = styled.nav`
 export const NavbarContainer=styled.div`
     display:flex;
     justify-content:space-between;
-    height:80px;
+    align-items:center;
+    height:70px;
     z-index:1;
     width:100%;
     padding:0 24px;
     max-width:1100px;
 `;
 
-export const NavLogo=styled(Link)`
-    color:#fff;
+export const NavLogo=styled.img`
     justify-self:flex-start;
     cursor:pointer;
-    font-size:1.5rem;
     display:flex;
     align-items:center;
-    margin-left:24px;
-    font-weight:bold;
-    text-decoration:none;
+    height:59px;
+    width:122px;
+
 `;
 
 export const MobileIcon=styled.div`
     display:none;
     @media screen and (max-width:768px){
-        display:block;
-        position:absolute;
-        top:0;
-        right:0;
-        transform:translate(-100%,60%);
-        font-size:1.8rem;
+        justify-self:flex-start;
         cursor:pointer;
+        display:flex;
+        align-items:center;
+        position:absolute;
+        right:8%;
         color:#fff;
 
     }
@@ -69,7 +67,7 @@ export const NavMenu=styled.ul`
     }
 `;
 export const NavItem=styled.li`
-    height:80px;
+    height:70px;
 `;
 
 export const NavLinks=styled(LinkScroll)`
@@ -82,7 +80,7 @@ export const NavLinks=styled(LinkScroll)`
     cursor:pointer;
 
     &.active{
-        border-bottom:3px solid #01bf71;
+        border-bottom:3px solid #435BAF;
     }
 
 `;
@@ -96,12 +94,12 @@ export const NavBtn=styled.nav`
 `;
 
 export const NavBtnLink=styled(Link)`
-    border-radius:50px;
-    background:#01bf71;
+    border-radius:80px;
+    background:linear-gradient(to left, #435BAF, #6841D7);
     white-space: nowrap;
     padding: 10px 22px;
-    color: #010606;
-    font-size:16px;
+    color: #fff;
+    font-size:1rem;
     outline:none;
     border:none;
     cursor:pointer;
@@ -111,7 +109,7 @@ export const NavBtnLink=styled(Link)`
     &:hover{
         transition: all 0.2s ease-in-out;
         background:#fff;
-        color:#010606;
+        color:#435BAF;
     }
 
 `;

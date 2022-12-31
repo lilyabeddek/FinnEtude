@@ -1,110 +1,115 @@
 import styled from 'styled-components'
-import{MdArrowForward, MdKeyboardArrowRight} from 'react-icons/md';
+import{MdArrowForward} from 'react-icons/md';
 
 export const HeroContainer=styled.div`
-  background:#0c0c0c;
+  background:#060606;
+  display:flex;
+  justify-content:center;
+  flex-direction:column;
+  align-items:center;
+  padding:5% 10%;
+  height:100vh;
+
+`;
+
+export const H1=styled.h1`
+  margin:1rem;
+  font-weight: 900;
+  text-align:center;
+`;
+
+export const WhiteSpan=styled.span`
+  font-size:3rem;
+  color:#fff;
+  @media screen and (max-width:768px){
+    font-size:2rem;
+  }
+
+`;
+
+export const ColorfulSpan=styled.span`
+  background:conic-gradient(#B786A0,#507BEC,#3F92E7,#4E81D1,#715A9B,#C0326A,#BB4D66,#ED715C,#E39082);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size:3rem;
+  @media screen and (max-width:768px){
+    font-size:2rem;
+  }
+
+`;
+
+
+export const Shadow=styled.div`
+  z-index:2;
   display:flex;
   justify-content:center;
   align-items:center;
-  padding:0 30px;
-  #height:800px;
-  height:100vh;
-  #width:100vw;
-  position:relative;
-  z_index:1;
 
-  :before{
-    content:'';
-    position:absolute;
-    top:0;
-    bottom:0;
-    right:0;
-    left:0;
-    background:linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%),linear-gradient(180deg, rgba(0,0,0,0.2) 0%, transparent 100%);
-    z-index:2;
-
+  &::before {
+    content: "";
+    background: linear-gradient(-45deg, #ff3d00 0%, #0400ff 100% );
+    position: absolute;
+    height: 5%;
+    width: 30%;
+    z-index: -1;
+    filter: blur(60px);
   }
+`;
+
+export const HeroLastReleaseElement=styled.div`
+  display:flex;
+  width:fit-content;
+  justify-content:space-between;
+  align-items:center;
+  padding: 1rem 1rem;
+  background:#0B0B0C;
+  border-radius:8px;
+  margin:3rem;
 
 `;
 
-export const HeroBg=styled.div`
-  position:absolute;
-  top:0;
-  right:0;
-  bottom:0;
-  left:0;
-  width:100%;
-  height:100%;
-  overflow:hidden;
-`;
 
-export const VideoBg=styled.video`
-  width:100%;
-  height:100%;
-  -o-object-fit:cover;
+
+export const ImageLogo=styled.img`
+  height:1.5rem;
+  margin-right:1rem;
   object-fit:cover;
-  background:#232a34;
 
 `;
 
-export const HeroContent=styled.div`
-  z-index:3;
-  max-width:100wv;
-  position:absolute;
-  padding:8px 24px;
+export const LastReleaseContent=styled.div`
   display:flex;
-  flex-direction:column;
+  width:fit-content;
+  justify-content:space-between;
   align-items:center;
-
 `;
 
-export const HeroH1=styled.h1`
+export const LastReleaseText=styled.p`
   color:#fff;
-  font-size:48px;
-  text-align:center;
-
-  @media screen and (max-width:768px){
-    font-size:40px;
-  }
-
-  @media screen and (max-width:480px){
-    font-size:32px;
-  }
-
+  font-size:1rem;
+  white-space:nowrap;
+  width:fit-content;
+  margin-right: 1rem;
 `;
 
-export const HeroP=styled.p`
-  margin-top:24px;
-  color:#fff;
-  font-size:24px;
-  text-align:center;
-  max-width:600px;
-
-  @media screen and (max-width:768px){
-    font-size:24px
-  }
-  
-  @media screen and (max-width:480px){
-    font-size:18px
-  }
-
+export const LastReleaseLine=styled.div`
+  min-width:1px;
+  height:20px;
+  object-fit:cover;
+  background:#333333;
+  margin-right: 1rem;
 `;
 
-export const HeroBtnWrapper=styled.div`
-  margin-top:32px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-
+export const LastReleaseButton=styled.p`
+  width:fit-content;
+  font-weight:500;
+  font-size:1rem;
+  white-space:nowrap;
+  color:#465EB7;
+  margin-right: 1rem;
 `;
 
-export const ArrowForward=styled(MdArrowForward)`
-  margin-left:8px;
-  font-size:20px;
+export const ArrowForwardLR=styled(MdArrowForward)`
+  color:#465EB7;
+  font-size:1.2rem;
 `;
-
-export const ArrowRight=styled(MdKeyboardArrowRight)`
-  margin-left:8px;
-  font-size:20px;
-`;
-

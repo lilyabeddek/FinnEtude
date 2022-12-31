@@ -1,7 +1,8 @@
 import React,{useState} from 'react'
-import Video from '../../assets/video.mp4'
-import { HeroContainer,HeroBg,VideoBg,HeroContent,HeroBtnWrapper,HeroH1,HeroP,ArrowForward,ArrowRight} from './HeroElements'
-import { Button } from '../ButtonElement'
+import WhiteLogo from '../../assets/LogoBlanc.png'
+import { HeroContainer,H1,WhiteSpan,ColorfulSpan,ArrowForwardLR,HeroLastReleaseElement,ImageLogo,LastReleaseContent,LastReleaseText,LastReleaseLine,LastReleaseButton,Shadow} from './HeroElements'
+import { Button,SubTitle,BtnWrapper,ArrowForward,ArrowRight} from '../SharedComponents'
+
 
 const HeroSection=()=> {
   const  [hover,setHover]=useState(false)
@@ -9,21 +10,31 @@ const HeroSection=()=> {
     setHover(!hover)
   }
   return (
-    <HeroContainer id="about">
-        <HeroBg>
-            <VideoBg autoplay loop muted src={Video} type='video/mp4'></VideoBg>
-        </HeroBg>
-        <HeroContent>
-          <HeroH1>Finnetude Plus Qu’un Partenaire.</HeroH1>
-          <HeroP>
-            Faire du Digital un levier de croissance pour 
-            le développement de son Business</HeroP>
-          <HeroBtnWrapper>
-            <Button to="/contactus" onMouseEnter={onHover} onMouseLeave={onHover}>
-              Contacter Nous { hover? <ArrowForward/>:<ArrowRight/>}
+    <HeroContainer>
+          <Shadow>
+            <HeroLastReleaseElement>
+                <ImageLogo src={WhiteLogo} alt='white Logo'/>
+                <LastReleaseContent>
+                  <LastReleaseText>Fin&Etude Last Release</LastReleaseText>
+                  <LastReleaseLine></LastReleaseLine>
+                  <LastReleaseButton>Contactez Nous</LastReleaseButton>
+                  <ArrowForwardLR/>
+
+                </LastReleaseContent>
+              </HeroLastReleaseElement>
+          </Shadow>
+            
+      
+          <H1>
+            <WhiteSpan>Finnetude Plus Qu’un </WhiteSpan>
+            <ColorfulSpan>Partenaire.</ColorfulSpan>
+          </H1>
+          <SubTitle center={1}>Faire du Digital un levier de croissance pour le développement de son Business</SubTitle>
+          <BtnWrapper>
+            <Button to="/contactus" gradient={0} onMouseEnter={onHover} onMouseLeave={onHover}>
+              Contacter Nous { hover? <ArrowRight/>:<ArrowForward/>}
             </Button>
-          </HeroBtnWrapper>
-        </HeroContent>
+          </BtnWrapper>
       
     </HeroContainer>
   )

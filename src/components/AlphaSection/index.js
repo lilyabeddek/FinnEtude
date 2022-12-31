@@ -1,35 +1,32 @@
-import React from 'react'
-import { Button } from '../ButtonElement'
-import { InfoContainer,InfoWrapper,InfoRow,Column1,TextWrapper,TopLine,Heading,SubTitle,BtnWrap,ImgWrap,Img, Column2 } from './InfoElements'
+import React,{useState} from 'react'
+import { GradientButton,BtnWrapper,H1,SubTitle,ArrowForward,ArrowRight} from '../SharedComponents'
+import { InfoContainer,InfoColumn,Img, ImageColumn,OverlapGroup } from './InfoElements'
+import img from '../../assets/mainPlateforme.png'
 
-const InfoSection = ({lightBg,id,imgStart,lightText,darkText,topLine,description,buttonLabel,headline,img,alt,primary,dark}) => {
+const AlphaSection = () => {
+  const  [hover,setHover]=useState(false)
+  const onHover=()=>{
+      setHover(!hover)
+  }
   return (
-    <>
-        <InfoContainer lightBg={lightBg} id={id}>
-            <InfoWrapper>
-                <InfoRow imgStart={imgStart}>
-                    <Column1>
-                    <TextWrapper>
-                        <TopLine>{topLine}</TopLine>
-                        <Heading lightText={lightText}>{headline}</Heading>
-                        <SubTitle darkText={darkText}>{description}</SubTitle>
-                        <BtnWrap>
-                            <Button to="/purshace" smooth={true} duration={500} spy={true} exact="true" offset={-80}  >{buttonLabel}</Button>
-                        </BtnWrap>
-
-                    </TextWrapper>
-                    </Column1>
-                    <Column2>
-                        <ImgWrap>
-                            <Img src={img} alt={alt}></Img>
-                        </ImgWrap>
-                    </Column2>
-                </InfoRow>
-            </InfoWrapper>
-
-        </InfoContainer>
-    </>
+                <InfoContainer imgStart={0}>
+                    <InfoColumn>
+                        <H1 center={0}>Alpha+</H1>
+                        <SubTitle center={0}>ALFA+ est une plateforme de simulation digitale des marchés financiers virtuels destinée à la formation des professionnels, étudiants et particuliers qui veulent renforcer leurs compétences en Finance des Marchés.</SubTitle>
+                        <BtnWrapper>      
+                            <GradientButton to="/purshace" onMouseEnter={onHover} onMouseLeave={onHover}>
+                                Acheter { hover? <ArrowRight/>:<ArrowForward/>}
+                            </GradientButton>
+                        </BtnWrapper>
+                    </InfoColumn>
+                    <ImageColumn>
+                        <OverlapGroup>
+                            <Img src={img} alt='Alpha+'></Img>
+                        </OverlapGroup>  
+                    </ImageColumn>
+    
+                </InfoContainer>
   )
 }
 
-export default InfoSection
+export default AlphaSection

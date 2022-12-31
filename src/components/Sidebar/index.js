@@ -1,11 +1,12 @@
 import React from 'react'
-import { SidebarContainer,Icon,CloseIcon,SidebarWrapper,SidebarLink,SideBtnWrap,SidebarRoute,SidebarMenu} from './SidebarElements'
+import { SidebarContainer,Icon,SidebarWrapper,SidebarLink,SideBtnWrap,SidebarRoute,SidebarMenu} from './SidebarElements'
+import { FaTimes } from "react-icons/fa";
 
 const Sidebar=({isOpen,toggle})=> {
   return (
     <SidebarContainer isOpen={isOpen}>
         <Icon onClick={toggle}>
-            <CloseIcon/>
+            <FaTimes/>
         </Icon>
         <SidebarWrapper>
             <SidebarMenu>
